@@ -5,7 +5,7 @@ class ServiceError extends Error{
         explanation="Service layer Error",
         statusCode = StatusCodes.INTERNAL_SERVER_ERROR
     ){
-        
+        super();
         this.name = "ServiceError";
         this.message = message;
         this.explanation = explanation
