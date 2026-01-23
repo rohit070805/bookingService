@@ -10,12 +10,12 @@ const {createChannel} = require('./utils/messageQueue');
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended:true}));
     const channel = await createChannel();
-
+    
     app.use((req, res, next) => {
         req.channel = channel;
         next();
     });
-    app.use('/api',apiRoutes);
+   app.use('/bookingservice/api',apiRoutes);
 
    app.listen(PORT,()=>{
     console.log("Server started on",PORT);
